@@ -1,6 +1,3 @@
-# YOLOv8-Dog-Couch-RealTimeDetection
-
-
 #  <p align ="center" height="40px" width="40px"> Dog On Couch Detector 🐶🛋️ </p>
 
 #  <p align ="center" height="40px" width="40px"> AI-powered pet detection for furniture protection 🤖 </p>
