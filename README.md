@@ -68,6 +68,6 @@ I'd like to express my gratitude to the creators of the YOLOv8 model, as their w
 
 ### Image No.5
 
-| ![Demo.mp4]([https://github.com/NadavIs56/Java_Delivery_Management_Simulation/blob/main/Sample%20images/Image-5.JPG?raw=true](https://github.com/NadavIs56/YOLOv8-Dog-Couch-RealTimeDetection/blob/main/Demo.mp4)) | 
+| ![Demo.mp4](https://github.com/NadavIs56/YOLOv8-Dog-Couch-RealTimeDetection/blob/9397efd403f8b3a5a58c98d8d6dc630176555454/Demo.mp4) | 
 |:--:| 
 | *5.	In this image, some packages have been transported from the sorting center to the customer's branches using standard trucks. The trucks are visible, and the delivery of packages from the branches to the customers has commenced, indicated by the presence of van-type trucks in the system.* |
