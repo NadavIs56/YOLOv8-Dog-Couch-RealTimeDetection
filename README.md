@@ -47,7 +47,7 @@ Note: While this was built with my dogs in mind, this tool could theoretically b
 
 ##     <p align = "left"> Conclusion and Request for Feedback 📝 </p>
 I hope that this tool will solve my problem. But even if it doesn't fully work as expected, I've thoroughly enjoyed the learning journey and the deep dive into the world of computer vision and object detection.<br>
-This is my first project using the YOLO model, so I welcome any feedback regarding the implementation, the code quality, and any potential optimizations that could ensure efficient runtimes even on relatively weak hardware. Your time and insights are greatly appreciated. Thank you! 🙏
+This is my first project using the YOLO model, so I welcome any feedback regarding the implementation, the code quality, and any potential optimizations that could ensure efficient runtimes even on relatively weak hardware. Your time and insights are greatly appreciated. <br>Thank you! 🙏
 
 <br>
 
