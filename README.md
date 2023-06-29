@@ -11,6 +11,9 @@
 <a href="https://opencv.org/" target="_blank" rel="noreferrer">   <img src="https://opencv.org/wp-content/uploads/2022/05/logo.png" width="64" height="64" /></a>  
 </p>
 
+<br>
+
+### <p align ="center"> Do remember to star ⭐ the repository if you like what you see!</p>
 
 <br>
 
