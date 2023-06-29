@@ -22,7 +22,7 @@ Motivated to find a solution, I decided to leverage the power of technology to c
 <br>
 
 ##     <p align = "left"> Implementation 💻 </p>
-The system utilizes the YOLOv8 pre-trained model from Ultralytics. I made several modifications, computations, and conditions to tailor the model for this specific application.
+The system utilizes the YOLOv8 pre-trained model from Ultralytics. <br>I made several modifications, computations, and conditions to tailor the model for this specific application.
 
 <br>
 
