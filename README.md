@@ -16,7 +16,7 @@
 
 ##     <p align = "left"> Introduction 📚 </p>
 
-Like many pet owners, I've faced a common problem:<br>every time I leave the house, my dogs jump on the sofa and leave behind a mess of fur 🐾🛋️. <br>I've tried countless methods to prevent this but to no avail.<br>
+Like many pet owners, I've faced a common problem:<br>every time I leave the house, my dogs jump on the sofa and leave behind a mess of fur 🐾🛋️. <br>I've tried countless methods to prevent this but to no avail.<br><br>
 Motivated to find a solution, I decided to leverage the power of technology to create a tool to manage this issue. I developed a system that combines computer vision, machine learning, and object detection. The result? A tool that alerts 🚨 whenever it detects one of the dogs on the sofa, causing them to get off.
 
 <br>
