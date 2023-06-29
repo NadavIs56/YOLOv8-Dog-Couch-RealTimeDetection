@@ -52,7 +52,7 @@ This is my first project using the YOLO model, so I welcome any feedback regardi
 <br>
 
 ##     <p align = "left"> Future Updates 🔮 </p>
-Stay tuned for future updates, enhancements, and the results of this project. I'll be posting regular updates as we progress. Thanks for stopping by! 👋
+Stay tuned for future updates, enhancements, and the results of this project. I'll be posting regular updates as we progress. <br>Thanks for stopping by! 👋
 
 <br>
 
