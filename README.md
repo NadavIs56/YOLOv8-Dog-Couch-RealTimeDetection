@@ -43,8 +43,7 @@ The system utilizes the YOLOv8 pre-trained model from Ultralytics. <br>I made se
 <br>
 Note: While this was built with my dogs in mind, this tool could theoretically be applied to cats or any other pets that are fond of lounging on your furniture.
 
-   
-<br>
+<br><br>
 
 ##     <p align = "left"> Conclusion and Request for Feedback 📝 </p>
 I hope that this tool will solve my problem. But even if it doesn't fully work as expected, I've thoroughly enjoyed the learning journey and the deep dive into the world of computer vision and object detection.<br>
