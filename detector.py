@@ -5,7 +5,7 @@ import pygame as pygame
 from ultralytics import YOLO
 
 
-net = YOLO("yolov8n.pt")
+model = YOLO("yolov8n.pt")
 
 classes = [
     'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck',
@@ -36,7 +36,7 @@ while True:
     if not ret:
         break
 
-    outs = net(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
+    outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
 
     pred_classes = [classes[int(i.item())] for i in outs[0].boxes.cls]
     pred_bbox = [i.tolist() for i in outs[0].boxes.xywh]
