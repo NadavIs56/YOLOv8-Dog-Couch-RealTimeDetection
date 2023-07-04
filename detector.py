@@ -39,8 +39,12 @@ while True:
     if not ret:
         break
 
+<<<<<<< HEAD
     if frame_counter % n == 0:
         outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
+=======
+    outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
+>>>>>>> 428aa702755e6985e980946f656d6aa129d6e9c3
 
         pred_classes = [classes[int(i.item())] for i in outs[0].boxes.cls]
         pred_bbox = [i.tolist() for i in outs[0].boxes.xywh]
