@@ -32,19 +32,15 @@ cap = cv2.VideoCapture(0)
 fps_camera = cap.get(cv2.CAP_PROP_FPS)
 target_fps = 10
 n = int(fps_camera / target_fps)
-frame_counter = 0
+frame_counter, not_detected = 0, 0
 
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
-<<<<<<< HEAD
     if frame_counter % n == 0:
         outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
-=======
-    outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
->>>>>>> 428aa702755e6985e980946f656d6aa129d6e9c3
 
         pred_classes = [classes[int(i.item())] for i in outs[0].boxes.cls]
         pred_bbox = [i.tolist() for i in outs[0].boxes.xywh]
@@ -63,8 +59,11 @@ while True:
                 couch_bed_flag = 1
 
         if alarm_played and (not dog_flag or not couch_bed_flag):
-            pygame.mixer.music.stop()
-            alarm_played = False
+            not_detected += 1
+            if not_detected > 5:
+                pygame.mixer.music.stop()
+                alarm_played = False
+                not_detected = 0
 
         for dog_box in dog_boxes:
             for couch_box in couch_boxes:
