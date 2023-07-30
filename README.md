@@ -20,7 +20,7 @@
 ##     <p align = "left"> Introduction 📚 </p>
 
 Like many pet owners, I've faced a common problem:<br>every time I leave the house, my dogs jump on the sofa and leave behind a mess of fur 🐾🛋️. <br>I've tried countless methods to prevent this but to no avail.<br><br>
-Motivated to find a solution, I decided to leverage the power of technology to create a tool to manage this issue. I developed a system that combines computer vision, machine learning, and object detection. The result? A tool that alerts 🚨 whenever it detects one of the dogs on the sofa, causing them to get off.
+Motivated to find a solution, I decided to leverage the power of technology to create a tool to manage this issue. This led to the development of a system that combines computer vision, machine learning, object detection, and real-time notifications to my personal Telegram account. The application alerts 🚨 whenever it detects one of the dogs on the sofa, and it even sends an immediate update to my phone, complete with an image of the mischievous dog, enabling me to take immediate action, no matter where I am. This use of technology not only ensures my furniture's cleanliness but also allows me to remotely monitor my pets' behavior.
 
 <br>
 
