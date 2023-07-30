@@ -33,6 +33,7 @@ The system utilizes the YOLOv8 pre-trained model from Ultralytics. <br>I made se
  -  Real-time detection of a specific event: dog climbing on a couch.
  -  Utilizes the powerful YOLOv8 model for object detection.
  -  Triggers real-time alerts when the event is detected.
+ -  Sends real-time alerts with photos to a specified Telegram chat.
 
 <br>
 
