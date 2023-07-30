@@ -41,11 +41,20 @@ The system utilizes the YOLOv8 pre-trained model from Ultralytics. <br>I made se
 1. Clone this repository to your local machine.
 2. Install the required packages using 'pip install -r requirements.txt'
 3. Position your computer in front of the couch. It's preferable if the computer's camera is parallel to the couch.
-4. Run the script 'python detector.py'
-5. The tool will then use your computer's camera to monitor the couch.
-6. The tool has been programmed to specifically detect dogs, cats, sofas, and beds while ignoring other objects.
+4. Set up a Telegram bot
+Update the telegram_key and chat_id variables in the code with your bot's API key and your chat ID.
+5. Run the script 'python detector.py'
+6. The tool will then use your computer's camera to monitor the couch.
+7. The tool has been programmed to specifically detect dogs, cats, sofas, and beds while ignoring other objects.
 <br>
 
+##     <p align = "left"> Setting Up the Telegram Bot 📲 </p>
+1. Message @BotFather on Telegram using the Telegram app.
+2. Type /newbot to create a new bot. Follow the instructions and set a name and username for your bot.
+3. After successfully creating the bot, BotFather will give you a token. This is your 'telegram_key' (keep it secret).
+4. Message @userinfobot on Telegram using the Telegram app.
+5. Press 'start'.
+6. The bot will reply to you with some personal information. The 'Id' is your 'chat_id' (keep it secret).
 
 <br><br>
 
