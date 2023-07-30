@@ -45,7 +45,7 @@ The system utilizes the YOLOv8 pre-trained model from Ultralytics. <br>I made se
 5. The tool will then use your computer's camera to monitor the couch.
 6. The tool has been programmed to specifically detect dogs, cats, sofas, and beds while ignoring other objects.
 <br>
-Note: While this was built with my dogs in mind, this tool could theoretically be applied to cats or any other pets that are fond of lounging on your furniture.
+
 
 <br><br>
 
