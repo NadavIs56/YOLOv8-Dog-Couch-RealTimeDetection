@@ -57,7 +57,7 @@ Update the telegram_key and chat_id variables in the code with your bot's API ke
 5. Press 'start'.
 6. The bot will reply to you with some personal information. The 'Id' is your 'chat_id' (keep it secret).
 
-<br><br>
+<br>
 
 ##     <p align = "left"> Conclusion and Request for Feedback 📝 </p>
 I hope that this tool will solve my problem. But even if it doesn't fully work as expected, I've thoroughly enjoyed the learning journey and the deep dive into the world of computer vision and object detection.<br><br>
