@@ -1,12 +1,48 @@
+import io
 import os
 import cv2
+import telebot
+import threading
 import numpy as np
+from PIL import Image
 import pygame as pygame
 from ultralytics import YOLO
+from datetime import datetime, timedelta
 
 
+telegram_key = "bot token"
+chat_id = "user id"
+bot = telebot.TeleBot(telegram_key)
+shared_frame = None
+
+def send_message(chat_id, message):
+    bot.send_message(chat_id, message)
+
+def send_photo(chat_id, frame):
+    img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    img = Image.fromarray(img_rgb)
+
+    bio = io.BytesIO()
+    bio.name = 'image.jpeg'
+    img.save(bio, 'JPEG')
+    bio.seek(0)
+
+    bot.send_photo(chat_id, bio)
+
+def telegram_listener():
+    @bot.message_handler(func=lambda message: True)
+    def echo_all(message):
+        if message.text == "update":
+            global shared_frame
+            if shared_frame is not None:
+                send_photo(chat_id, shared_frame)
+    bot.polling()
+
+telegram_thread = threading.Thread(target=telegram_listener)
+telegram_thread.start()
+
+last_sent_time = datetime.now() - timedelta(minutes=15)
 model = YOLO("yolov8n.pt")
-
 classes = [
     'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck',
     'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench',
@@ -38,6 +74,7 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+    shared_frame = frame
 
     if frame_counter % n == 0:
         outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
@@ -60,15 +97,19 @@ while True:
 
         if alarm_played and (not dog_flag or not couch_bed_flag):
             not_detected += 1
-            if not_detected > 5:
+            if not_detected > 15:
                 pygame.mixer.music.stop()
-                alarm_played = False
                 not_detected = 0
+                alarm_played = False
 
         for dog_box in dog_boxes:
             for couch_box in couch_boxes:
                 if dog_box[3] < couch_box[3] - ((couch_box[3] - couch_box[1]) * 0.4) and ((dog_box[0] > couch_box[0] and dog_box[0] < couch_box[2]) or (dog_box[2] > couch_box[0] and dog_box[2] < couch_box[2])):
-                    while not alarm_played:
+                    if not alarm_played:
+                        if datetime.now() - last_sent_time >= timedelta(minutes=15):
+                            send_message(chat_id, "Dog has detected on couch!")
+                            last_sent_time = datetime.now()
+                            send_photo(chat_id, frame)
                         pygame.mixer.music.play(-1)  # play in a loop
                         alarm_played = True
 
