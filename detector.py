@@ -41,7 +41,7 @@ def telegram_listener():
 telegram_thread = threading.Thread(target=telegram_listener)
 telegram_thread.start()
 
-last_sent_time = datetime.now() - timedelta(minutes=15)
+last_sent_time = datetime.now() - timedelta(seconds=15)
 model = YOLO("yolov8n.pt")
 classes = [
     'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck',
@@ -106,7 +106,7 @@ while True:
             for couch_box in couch_boxes:
                 if dog_box[3] < couch_box[3] - ((couch_box[3] - couch_box[1]) * 0.4) and ((dog_box[0] > couch_box[0] and dog_box[0] < couch_box[2]) or (dog_box[2] > couch_box[0] and dog_box[2] < couch_box[2])):
                     if not alarm_played:
-                        if datetime.now() - last_sent_time >= timedelta(minutes=15):
+                        if datetime.now() - last_sent_time >= timedelta(seconds=15):
                             send_message(chat_id, "Dog has detected on couch!")
                             last_sent_time = datetime.now()
                             send_photo(chat_id, frame)
