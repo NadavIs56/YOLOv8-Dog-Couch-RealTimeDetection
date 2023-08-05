@@ -77,7 +77,7 @@ while True:
     shared_frame = frame
 
     if frame_counter % n == 0:
-        outs = model(frame, task='detect', iou=0.6, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
+        outs = model(frame, task='detect', iou=0.2, conf=0.3, show=True, save_conf=True, classes=[15,16,57,59], boxes=True)
 
         pred_classes = [classes[int(i.item())] for i in outs[0].boxes.cls]
         pred_bbox = [i.tolist() for i in outs[0].boxes.xywh]
@@ -97,21 +97,23 @@ while True:
 
         if alarm_played and (not dog_flag or not couch_bed_flag):
             not_detected += 1
+            dog_boxes = [(0, 0, 0, 0)]
+            couch_boxes = [(0, 0, 0, 0)]
             if not_detected > 15:
                 pygame.mixer.music.stop()
                 not_detected = 0
                 alarm_played = False
-
-        for dog_box in dog_boxes:
-            for couch_box in couch_boxes:
-                if dog_box[3] < couch_box[3] - ((couch_box[3] - couch_box[1]) * 0.4) and ((dog_box[0] > couch_box[0] and dog_box[0] < couch_box[2]) or (dog_box[2] > couch_box[0] and dog_box[2] < couch_box[2])):
-                    if not alarm_played:
-                        if datetime.now() - last_sent_time >= timedelta(seconds=15):
-                            send_message(chat_id, "Dog has detected on couch!")
-                            last_sent_time = datetime.now()
-                            send_photo(chat_id, frame)
-                        pygame.mixer.music.play(-1)  # play in a loop
-                        alarm_played = True
+        else:
+            for dog_box in dog_boxes:
+                for couch_box in couch_boxes:
+                    if dog_box[3] < couch_box[3] - ((couch_box[3] - couch_box[1]) * 0.5) and ((couch_box[0] < dog_box[0] < couch_box[2]) or (couch_box[0] < dog_box[2] < couch_box[2])):
+                        if not alarm_played:
+                            if datetime.now() - last_sent_time >= timedelta(seconds=15):
+                                send_message(chat_id, "Dog has detected on couch!")
+                                last_sent_time = datetime.now()
+                                send_photo(chat_id, frame)
+                            pygame.mixer.music.play(-1)  # play in a loop
+                            alarm_played = True
 
     frame_counter += 1
 
