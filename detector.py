@@ -10,9 +10,9 @@ from ultralytics import YOLO
 from datetime import datetime, timedelta
 
 
-telegram_key = "6617166862:AAEBwBXzpmI0UlJpIlc8PNnljzRzz4QH5fg"
-chat_id_nadav = "357764852"
-chat_id_shir = "5031404979"
+telegram_key = ""
+chat_id_nadav = ""
+chat_id_shir = ""
 bot = telebot.TeleBot(telegram_key)
 shared_frame = None
 
