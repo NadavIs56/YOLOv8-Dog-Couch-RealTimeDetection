@@ -11,8 +11,7 @@ from datetime import datetime, timedelta
 
 
 telegram_key = ""
-chat_id_nadav = ""
-chat_id_shir = ""
+chat_id = ""
 bot = telebot.TeleBot(telegram_key)
 shared_frame = None
 
@@ -36,8 +35,7 @@ def telegram_listener():
         if message.text == "update":
             global shared_frame
             if shared_frame is not None:
-                send_photo(chat_id_nadav, shared_frame)
-                send_photo(chat_id_shir, shared_frame)
+                send_photo(chat_id, shared_frame)
     bot.polling()
 
 telegram_thread = threading.Thread(target=telegram_listener)
@@ -107,11 +105,9 @@ while True:
                         not_detected = 0
                         if not alarm_played:
                             if datetime.now() - last_sent_time >= timedelta(seconds=15):
-                                send_message(chat_id_nadav, "Dog has detected on couch!")
-                                send_message(chat_id_shir, "Dog has detected on couch!")
+                                send_message(chat_id, "Dog has detected on couch!")
                                 last_sent_time = datetime.now()
-                                send_photo(chat_id_nadav, frame)
-                                send_photo(chat_id_shir, frame)
+                                send_photo(chat_id, frame)
                             pygame.mixer.music.play(-1)  # play in a loop
                             alarm_played = True
                     else:
