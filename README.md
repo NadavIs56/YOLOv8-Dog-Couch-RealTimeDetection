@@ -76,3 +76,10 @@ I'd like to express my gratitude to the creators of the YOLOv8 model, as their w
 <br>
 
 ### <p align ="center"> Do remember to star ⭐ the repository if you like what you see!</p>
+
+---
+
+
+<div align="center">
+  Made with ❤️ by <a href="https://github.com/NadavIs56">Nadav Ishai</a>
+</div>
