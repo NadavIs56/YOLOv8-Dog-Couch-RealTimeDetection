@@ -15,6 +15,9 @@
 <br>
 
 ### <p align ="center"> Do remember to star ⭐ the repository if you like what you see!</p>
+<p align="center">
+  <a href="https://github.com/NadavIs56/YOLOv8-Dog-Couch-RealTimeDetection/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NadavIs56/YOLOv8-Dog-Couch-RealTimeDetection"></a>
+</p>
 
 <br>
 
