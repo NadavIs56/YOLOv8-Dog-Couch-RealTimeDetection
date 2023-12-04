@@ -3,7 +3,6 @@
 #  <p align ="center" height="40px" width="40px"> AI-powered pet detection for furniture protection 🤖 </p>
 
 
-
 ### <p align ="center"> Implemented using: </p>
 <p align ="center">
 <a href="https://www.python.org/" target="_blank" rel="noreferrer">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png" width="64" height="64" /></a>
